@@ -1,0 +1,44 @@
+<h1>Clientes</h1>
+<ol class="breadcrumb mb-4 bg-color-padrao">
+    <li class="breadcrumb-item active text-light">Cadastro</li>
+</ol>
+
+<div class="container" class="p-6 mb-12">
+    <div class="form-horizontal" [formGroup]="form">
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <label class="form-label">ID</label>
+                <input class="form-control" formControlName="id" type="text">
+            </div>
+            <div class="col-md-6 mb-2">
+                <label class="form-label">Data Cadastro:</label>
+                <input class="form-control" formControlName="dataCadastro" type="date" value="dataAtual">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <label class="form-label">Nome</label>
+                <input class="form-control" formControlName="nome" type="text">
+            </div>
+            <div class="col-md-6 mb-2">
+                <label class="form-label">CPF</label>
+                <input class="form-control" formControlName="cpf" type="text" mask="000.000.000-00">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 mb-2">
+                <label class="form-label">Observação</label>
+                <textarea class="form-control" formControlName="observacao" rows="3"> </textarea>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12" style="text-align: left">
+                    <app-button (clicked)="onVoltar()" title="Voltar"></app-button>&nbsp;
+                    <app-button (clicked)="onSave()" title="Salvar" [isDisabled]="form.invalid"></app-button>
+              
+            </div>
+        </div>
+    </div>
+</div>
